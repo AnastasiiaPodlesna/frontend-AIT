@@ -1,0 +1,58 @@
+.title {
+    font-family: "Arial", sans-serif, bold;
+    size: 46px;
+    color:rgb(11, 71, 76);
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    gap: 20px;
+    align-items: top; /* всегда работает с второстепенной */
+    justify-content: space-between; /* всегда работает с главной осью */
+    width: auto;
+    height: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* поменяли направление во флекс-контейнере, гл.ось - вертикальная*/
+    align-items: center;
+    /* всегда работает с второстепенной */
+}
+
+.butterfly-card>img {
+    width: 150px;
+}
+
+.butterfly-card {
+    text-align: left;
+    text-wrap: wrap;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;  /* поменяли направление во флекс-контейнере, гл.ось - вертикальная*/
+    align-items: center; /* всегда работает с второстепенной */
+    justify-content: space-between; /* всегда работает с главной осью */
+    background-color: rgb(144, 188, 194);
+    width: 350px;
+    height: 300px;
+}
+
+.butterfly-gallery {
+    padding: 15px 0px;
+    display: flex;
+    gap: 10px;  /* задает промежуток между элементами */
+    background-color: rgb(185, 180, 159);
+    min-height: 900px;
+    border: 1.5px solid;
+    /* justify-content: center;  */  /* центровать по главной оси */
+/* разделили равномерно свободное пространство между элементами */
+    justify-content: center; 
+    /* align-items управляет поведением flex элементов по поперечной оси; */
+    align-items: center;
+    flex-wrap: wrap; /* перенос на следующую строку */
+    align-content: center; /* отвечает за за сгруппированное положение карточек при 
+    переносе карточек через  flex-wrap */
+
+}
