@@ -1,3 +1,22 @@
 a{
     color: black;
+    text-decoration: none;
+}
+
+.lesson_container{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: blueviolet;
+}
+
+main{
+    padding: 0px 30px;
+}
+
+a:hover{ /* меняет стили элементов (ссылок), при наведении на них мышкой */
+    text-decoration: underline;
+    color: blueviolet;
 }
