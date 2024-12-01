@@ -19,7 +19,7 @@ body{
 .grid-item {
     display: flex;
     flex-direction: column; /* изображение и текст будут располагаться друг под другом */
-    justify-content: center; /* центрирование по вертикали, поменяли оси */
+    justify-content:space-around; /* центрирование по вертикали, поменяли оси */
     align-items: center; /* центрирование по горизонтали */
     text-align: left; /* текст будет выровнен по левой стороне */
     padding: 10px; /* отступ внутри карточки */
