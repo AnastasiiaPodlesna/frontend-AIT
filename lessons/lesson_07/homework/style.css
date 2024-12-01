@@ -12,32 +12,40 @@ body{
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(3, 1fr); /* три колонки */
-    grid-auto-rows: auto; /* высота автоматичеcкая строк */
+    grid-auto-rows: auto; /* высота строк автоматическая */
     padding: 10px; /* отступ для контейнера */
 }
 
 .grid-item {
     display: flex;
     flex-direction: column; /* изображение и текст будут располагаться друг под другом */
-    justify-content:space-around; /* центрирование по вертикали, поменяли оси */
+    justify-content: center; /* центрирование по вертикали, поменяли оси */
     align-items: center; /* центрирование по горизонтали */
-    text-align: left; /* текст будет выровнен по левой стороне */
-    padding: 10px; /* отступ внутри карточки */
+    padding: 30px; /* отступ внутри карточки */
+    height: 250px;
     background-color: #cac4c4; /* фон для карточки */
     border-radius: 8px; /* скругленные углы */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* тень */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* тень */ 
+    position: relative; /* важно для позиционирования текста */
 }
 
 .grid-item img {
-    max-width: 100%; /* Изображение не выходит за пределы карточки */
-    height: auto; /* Сохраняется пропорция изображения */
-    border-radius: 8px; /* Скругленные углы для изображения */
-}
+    display: flex;
+    max-width: 100%; /* изображение не выходит за пределы карточки */
+    height: auto; /* сохраняется пропорция изображения */
+    border-radius: 8px; /* скругленные углы для изображения */
+    }
+
 .mytext {
-    margin: 10px 15px; /* отступ между изображением и текстом */
-    word-wrap: break-word; /* перенос длинных слов */
-    font-size: 18px !important; /* размер шрифта для текста */
+    font-size: 20px !important; /* размер шрифта для текста */
     color: #333; /* цвет текста */
+    text-align: center; /* текст будет выровнен по левой стороне */
+    word-wrap: break-word; /* перенос длинных слов */
+    padding: 5px 0; /* отступы для текста */
+    bottom: 10px; /* 10px от низа карточки */
+    left: 10px; /* отступ от левого края */
+    right: 10px; /* отступ от правого края */
+    position: absolute; /* абсолютное позиционирование текста */
 }
 
 
