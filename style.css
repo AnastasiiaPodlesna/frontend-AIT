@@ -1,22 +1,137 @@
-a{
-    color: black;
-    text-decoration: none;
-}
+   a {
+       color: black;
+       text-decoration: none;
+   }
 
-.lesson_container{
-    display: flex;
-    flex-direction: column;
-}
+   /* каждой ссылке при создании будет добавлен текст из content
+   a::before{
+    content: "👣 ";
+   }
 
-h1{
-    color: blueviolet;
-}
+   a::after{
+    content: " =>";
+} */
 
-main{
-    padding: 0px 30px;
-}
+   .lesson_container {
+       display: flex;
+       flex-direction: column;
+   }
 
-a:hover{ /* меняет стили элементов (ссылок), при наведении на них мышкой */
-    text-decoration: underline;
-    color: blueviolet;
-}
+   h1 {
+       font-size: 42px;
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       text-align: center;
+       /* по центру */
+       margin: 20px 0;
+       color: rgb(248, 248, 250);
+       background-color: #2c6f2c;
+   }
+
+   body {
+       margin: 0;
+       display: flex;
+       flex-direction: column;
+       min-height: 100vh;
+       /* высота видимой области, относительно страницы браузера, 100%*/
+   }
+
+   header {
+       /* min-width: 80vw; ширина видимой области относительно окна браузера*/
+       position: sticky;
+       /*приклеивание, в top указывается позиция приклеивания*/
+       top: 0;
+       height: 80px;
+       background-color: rgb(123, 151, 123);
+       z-index: 1000;
+   }
+
+   main {
+       flex: 1;
+       /* настройка для флекс-элемента, что бы он растянулся по всей высоте (высоте, потому что в body мы перевернули оси) контейнера родителя*/
+       position: relative;
+       background-image: url('https://images.wallpaperscraft.com/image/single/abstract_background_color_76025_1280x720.jpg');
+       background-size: cover;
+       /* Картинка полностью покрывает main */
+       background-position: center;
+       /* Центрируем картинку */
+       display: flex;
+       justify-content: center;
+       /* Центрируем содержимое по горизонтали */
+       align-items: center;
+       /* Центрируем содержимое по вертикали */
+       padding: 0px 30px;
+   }
+
+   div img {
+       background-repeat: no-repeat;
+       background-size: cover;
+       /* Растягивает изображение, сохраняя пропорции */
+
+   }
+
+   .lesson_container {
+       padding: 30px 30px;
+       background-color: rgb(123, 151, 123);
+       display: grid;
+       grid-template-columns: minmax(200px, 1ft);
+       /* минимальная ширина 100px, максимальная — 1fr */
+       gap: 15px;
+       /* Промежуток между элементами */
+       align-items: center;
+       border-radius: 5px;
+   }
+
+   .lesson_container a {
+       text-decoration: none;
+       color: rgb(248, 248, 250);
+       padding: 10px;
+       background-color: #2c6f2c;
+       border-radius: 5px;
+       font-size: 18px;
+       transition: background-color 0.3s;
+   }
+
+   .card a:hover {
+       background-color: #1e5b1e;
+   }
+
+
+   footer {
+       height: 50px;
+       background-color: lightgrey;
+
+   }
+
+
+   .lesson:hover {
+       /* меняет стили элементов (ссылок), при наведении на них мышкой */
+       text-decoration: underline;
+       color: blueviolet;
+   }
+
+   .hw:hover {
+       text-decoration: underline;
+       color: rgb(90, 193, 90);
+   }
+
+   @media (max-width: 430px) {
+
+       main{
+        max-height: 400px;
+       }
+           
+    }
+    
+
+   @media (max-width: 768px) {
+       .lesson_container {
+        min-width: 350px;  
+        min-height: 450px
+        }
+
+        .lesson_container a{
+            font-size: 24px;
+        }
+
+
+    }

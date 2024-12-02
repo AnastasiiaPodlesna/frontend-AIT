@@ -1,0 +1,103 @@
+
+body{
+    background-color: rgb(179, 134, 66);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* высота видимой области, относительно страницы браузера, 100%*/
+}
+
+h1{
+    font-size: 42px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center; /* по центру */
+    margin: 20px 0; /* отступы */
+}
+header{
+    /* min-width: 80vw; ширина видимой области относительно окна браузера*/
+        position: sticky; /*приклеивание, в top указывается позиция приклеивания*/
+        top: 0;
+        height: auto;
+        background-color: rgb(179, 134, 66);
+        z-index: 1000;
+    }
+    
+    main{
+        flex: 1;  /* настройка для флекс-элемента, что бы он растянулся по всей высоте (высоте, потому что в body мы перевернули оси) контейнера родителя*/
+        padding: 0px 30px;
+    }
+
+    footer{
+        height: 50px;
+        background-color: lightgrey;
+    }
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* мин ширина и максимальная ширина колонки */
+    /* grid-auto-rows: 200px; высота строк автоматически 80пкс для всех строк */
+    padding: 10px; /* отступ для контейнера */
+}
+
+.grid-container a{
+    color: black;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* плавная трансформация 3 сек */
+}
+
+.grid-container a:hover{
+    transform: scale(1.1); /* при касании увеличивает размер на 10% */
+}
+
+.grid-item {
+    padding: 10px; /* отступ внутри карточки */
+    height: 220px;
+    background-color: #cac4c4; /* фон для карточки */
+    border-radius: 8px; /* скругленные углы */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* тень */ 
+    position: relative; /* относительное позиционирование = важно для позиционирования текста */
+}
+
+.grid-item img {
+        width: 100%;
+        height: 75%;
+        object-fit: cover; /* задаем картинке правило, что бы она не растягивалась по размеру контейнера а обрезала не вошедшие в рамку края */
+        border-radius: 8px; /* скругленные углы для изображения */
+    }
+
+.mytext {
+    font-size: 17px !important; /* размер шрифта для текста */
+    color: #333; /* цвет текста */
+    text-align: center; /* текст будет выровнен по центру */
+    text-shadow: #c97a20;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    word-wrap: break-word; /* перенос длинных слов */
+ 
+    bottom: 15px; /* 10px от низа карточки */
+    left: 10px; /* отступ от левого края */
+    right: 10px; /* отступ от правого края */
+    position: absolute; /* абсолютное позиционирование текста */
+}
+
+@media (max-width: 430px) {
+
+    .grid-item{
+        height: auto;
+        padding-bottom: 35px;
+    }
+  
+  }
+
+@media (max-width: 768px) {
+    .grid-item{
+        height: 180px;
+        padding-bottom: 15px;
+    }
+    .mytext{
+        font-size: 16px!important;
+    }
+  
+  }
+
+
