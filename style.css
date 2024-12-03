@@ -135,12 +135,12 @@
     }
 
    @media (max-width: 768px) {
-        .lesson_container {
-        grid-template-columns: minmax(200px, 1fr); /* автоматическая ширина колонок */
-        min-width: 350px;
-        min-height: 450px;
+   
+    .lesson_container {
+        grid-template-columns: 1fr; /* одна колонка */
+        min-width: 350px; /* минимальная ширина контейнера */
+        min-height: 450px; /* минимальная высота контейнера */
         }
-
         .lesson_container a {
             font-size: 24px;
         }
