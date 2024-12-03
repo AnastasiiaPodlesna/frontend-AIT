@@ -73,7 +73,7 @@
        padding: 30px 30px;
        background-color: rgb(123, 151, 123);
        display: grid;
-       grid-template-columns: minmax(200px, 1ft);
+       grid-template-columns: minmax(200px, 1fr);
        /* минимальная ширина 100px, максимальная — 1fr */
        gap: 15px;
        /* Промежуток между элементами */
@@ -121,8 +121,9 @@
     }
 
     .lesson_container {
-        grid-template-columns: minmax(200px, 1ft);
-        padding: 15px; 
+        grid-template-columns: 1fr;
+        padding: 10px; 
+    }
 
     .lesson_container a {
         font-size: 16px; 
@@ -130,18 +131,21 @@
 
     h1 {
         font-size: 30px; 
-}
-    
+    }
+    }
 
    @media (max-width: 768px) {
-       .lesson_container {
-        min-width: 350px;  
-        min-height: 450px
+        .lesson_container {
+        grid-template-columns: minmax(200px, 1fr); /* автоматическая ширина колонок */
+        min-width: 350px;
+        min-height: 450px;
         }
 
-        .lesson_container a{
+        .lesson_container a {
             font-size: 24px;
         }
 
-
+        h1 {
+            font-size: 36px; 
+        }
     }
