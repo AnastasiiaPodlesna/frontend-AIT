@@ -1,0 +1,202 @@
+
+
+body {
+    width: 1200px;
+    height: 3577px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* высота видимой области, относительно страницы браузера, 100%*/
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 25px;
+    gap: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+    color: black;
+}
+
+header a { 
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+header nav > a {
+   padding: 10px;
+}
+
+
+.image_overlay { /* обертка изображения */
+    width: 1200px; 
+    height: 450px; 
+    margin: 0; /*  отступы */
+    padding: 0; /* паддинги */
+    position: relative;
+    overflow: hidden; /* Обрезаем картинку, если она выходит за пределы */
+  
+}
+
+.image_overlay img {
+    width: 100%; /* ширина изображения 100% от родительского контейнера */
+    height: 100%; 
+    object-fit: cover; /* изображение будет обрезаться, если его пропорции не совпадают с контейнером */
+    display: block; /* убираем возможные отступы снизу */
+}
+
+.left_name {   /* ссылки слева в хеддере */
+    width: 339px;
+    height: 54px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left_name a {
+    size: 24px;
+    text-decoration: none;
+}
+
+.as {
+    font-weight: bold;
+}
+
+main {
+    flex: 1;
+    width: 1200px;
+    /* настройка для флекс-элемента, что бы он растянулся по всей высоте (высоте, потому что в body мы перевернули оси) контейнера родителя*/
+
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #333;
+    text-align: left;  
+}
+
+.grid-gallery-sight {
+    display: grid; 
+    height: auto;
+    gap: 20px;
+    padding: 20px;  
+}
+
+section {
+    width: 360px; /* каждая секция займет одинак. ширину */
+    height: 365px;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background-color: white; 
+    align-items: center;
+}
+
+section img {
+    width: 350px;
+    height: 235px; 
+    object-fit: cover; /* Картинка не растягивается, а обрезается */
+}
+
+section p {
+    padding-top: 10px;  /* отступ от изображения */
+    font-size: 14px;
+    color: #666;    /* цвет текста */
+    line-height: 1.5;
+}
+/* контейнер для трех секций */
+.section-row {
+    display: flex;
+    gap: 10px; 
+    margin-bottom: 20px; /* отступ снизу для группы картинок */
+}
+.top-of-page {
+    width: 1200px;
+    height: 80px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+
+.top-of-page a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.top-of-page img {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+footer {
+    width: 1200px;
+    background-color: rgb(69, 67, 67);
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column; 
+    height: 383px; 
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px; 
+    padding: 20px;
+}
+
+.footer-column {
+    width: 180px;
+    height: auto;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Строка внизу футера */
+footer p {
+    padding: 20px;
+    text-align: left;
+    color: white;
+    font-size: 20px;
+    margin-top: auto; 
+}
+
+
+
+
+
+
+
