@@ -108,8 +108,13 @@
    footer {
        height: 50px;
        background-color: lightgrey;
-       padding: 20px;
+       display: flex;
+       align-items: center;
+   }
 
+   footer p {
+    font-size: 16px;
+    padding: 20px;
    }
 
 
