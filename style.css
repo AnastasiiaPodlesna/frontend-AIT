@@ -72,8 +72,8 @@
        background-repeat: no-repeat;
        background-size: cover;
        /* Растягивает изображение, сохраняя пропорции */
-       height: 100vh;
-       /* overflow: hidden;  Обрезаем изображение, если оно выходит за пределы */
+       /* height: 100vh;
+       overflow: hidden;  Обрезаем изображение, если оно выходит за пределы */
        
 
    }
