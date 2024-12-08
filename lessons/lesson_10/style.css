@@ -1,0 +1,21 @@
+button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    background-color: rgb(129, 139, 139);
+
+    #btn-change {
+        background-color: rgb(144, 144, 231);
+        transition: box-shadow 0.3s ease; /* Плавный переход для тени */
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Тень по умолчанию */
+      }
+
+    #btn-change {
+        background-color: rgb(144, 144, 231);
+        transition: box-shadow 0.3s ease; /* Плавный переход для тени */
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Тень по умолчанию */
+    }
+   
+}
