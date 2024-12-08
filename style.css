@@ -38,7 +38,9 @@
 
    header {
        /* min-width: 80vw; ширина видимой области относительно окна браузера*/
-       position: sticky;
+       position: fixed; /* фиксируем хедер */
+       top: 0;
+       width: 100%;
        /*приклеивание, в top указывается позиция приклеивания*/
        top: 0;
        height: 80px;
@@ -48,6 +50,7 @@
        justify-content: center;
        align-items: center;
        padding: 10px 20px;
+       z-index: 1000;
        
    }
 
