@@ -42,7 +42,7 @@
        top: 0;
        width: 100%;
        /*приклеивание, в top указывается позиция приклеивания*/
-       top: 0;
+    
        height: 80px;
        background-color: rgb(123, 151, 123);
        /* z-index: 1000;  на переднем плане  */
@@ -69,6 +69,7 @@
        align-items: center;
        /* Центрируем содержимое по вертикали */
        padding: 0px 30px;
+       margin-top: 80px;
    }
 
    div img {

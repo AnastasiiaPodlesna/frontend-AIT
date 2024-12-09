@@ -13,7 +13,7 @@ for (let i = 0; i < names.length; i++)
   } else if (age % 10 >= 2 && age % 10 <= 4 && (age % 100 < 10 || age % 100 >= 20)) { // если возраст заканчивается на 2, 3 или 4, но не на 12, 13, 14 и т. д., то используем "года".
     yearWord = "года";
   }
-  result.push(names[i] + " " + ages[i] + " " + yearWord);
+  result.push(names[i] + " " + ages[i] + " " + yearWord); // result.push('${names[i]} ${ages[i]} yearWord');
 }
 console.log(result);
 
