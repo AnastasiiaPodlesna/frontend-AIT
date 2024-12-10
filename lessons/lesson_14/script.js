@@ -1,11 +1,3 @@
-// Создать объект bankAccount (DEBIT CARD), который:
-
-// accountNumber: "123456789"
-// accountHolderName: "Alice"
-// balance: 0
-// deposit(sum) { TODO Пополнение счёта }
-// withdraw(sum) { TODO Списание счёта }
-// checkBalance() { ODO Просмотр баланса счёта }
 
 let bankAccount = 
 {
@@ -46,7 +38,42 @@ let bankAccount =
    }
 };
 
-bankAccount.deposit(1000);    // пополнение счета 
-bankAccount.withdraw(600);    // снятие допустимой суммы
-bankAccount.checkBalance();   // проверка текущего баланса
-bankAccount.withdraw(600);    // снятие недопустимой суммы
+let accounts = [];
+
+function createAccount()
+{
+    
+    const name = document.getElementById("name").value.trim();
+
+    if (name) 
+    {
+        accounts.push
+        ({
+            ...bankAccount,
+            accountNumber: accounts.length + 1,    
+            accountHolderName: name
+        })
+        alert('Account created successfully');
+    }
+    else
+    {
+       alert('Please, enter a valid name');
+    }
+    document.getElementById("name").value = "";
+};
+
+function showAccounts()
+{
+    const accountList = document.getElementById("accountList");
+    accountList.innerHTML = "";
+
+    accounts.forEach(account => 
+    {
+        const listItem = document.createElement("li");
+        listItem.textContent = `Account ID: ${account.accountNumber}, Name: ${account.name}, Balance: ${account.balance}`;
+        accountList.appendChild(listItem);
+    });
+
+
+
+};
