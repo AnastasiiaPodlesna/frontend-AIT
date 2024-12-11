@@ -40,6 +40,7 @@ let bankAccount =
 
 let accounts = [];
 
+
 function createAccount()
 {
     
@@ -62,18 +63,114 @@ function createAccount()
     document.getElementById("name").value = "";
 };
 
-function showAccounts()
-{
-    const accountList = document.getElementById("accountList");
-    accountList.innerHTML = "";
-
-    accounts.forEach(account => 
-    {
-        const listItem = document.createElement("li");
-        listItem.textContent = `Account ID: ${account.accountNumber}, Name: ${account.name}, Balance: ${account.balance}`;
-        accountList.appendChild(listItem);
-    });
+// --------------------------------------------- 2 section -------------------------------------------------------
 
 
+// function showAccounts()
+// {
+//     const accountList = document.getElementById("accountList");
+//     accountList.innerHTML = "";
 
-};
+//     accounts.forEach(account => 
+//     {
+//         const listItem = document.createElement("li");
+//         listItem.textContent = `Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}`;
+//         accountList.appendChild(listItem);
+//     });
+
+// };
+
+// 2 вариант --------------------------------------------------------------------------------------
+
+ function showAccounts()
+ {
+     const accountList = document.getElementById('accountList');
+     accountList.innerHTML = ''; // очищаем список;
+
+    // for (const account of accounts) 
+    // {
+    //     const li = document.createElement('li');
+    //     li.textContent = 'Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}';
+    //     accountList.appendChild(li);
+
+    //     // accountList.innerHTML += '<li>Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}</li>';
+    // }
+ 
+    accounts.forEach((account, index) => 
+         {
+            accountList.innerHTML += `<li> ${index + 1}. Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} </li>`;
+         });
+
+ }
+
+ // --------------------------------------------- 3 section -------------------------------------------------------
+
+ const withdraw = document.getElementById('withdraw');
+ const deposit = document.getElementById('deposit');
+
+ deposit.onclick = function() {
+
+ const id = document.getElementById("accountId").value.trim();
+ const amount = parseFloat(document.getElementById("amount").value.trim());
+
+    if (id > 0 && id <= accounts.length) {
+
+        if (amount > 0)
+        {
+            accounts[id - 1].balance += amount;
+
+          
+             const accountList = document.getElementById("accountList");
+             accountList.innerHTML = ''; 
+    
+             accounts.forEach((account, index) => 
+             {
+             accountList.innerHTML += `<li> ${index + 1}. Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} </li>`;
+             });
+        }  
+
+        else {
+            alert('Incorrect input')
+        };
+    }
+    else {
+        alert('Incorrect input for account ID')
+    };
+
+    document.getElementById("accountId").value = "";
+    document.getElementById("amount").value = "";
+  
+ }
+
+ withdraw.onclick = function() {
+
+    const id = document.getElementById("accountId").value.trim();
+    const amount = parseFloat(document.getElementById("amount").value.trim());
+
+    if (id > 0 && id <= accounts.length) {
+
+        if (amount > 0 && amount <= accounts[id - 1].balance)
+        {
+            accounts[id - 1].balance -= amount;
+
+          
+             const accountList = document.getElementById("accountList");
+             accountList.innerHTML = ''; 
+    
+             accounts.forEach((account, index) => 
+             {
+             accountList.innerHTML += `<li> ${index + 1}. Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} </li>`;
+             });
+        }  
+
+        else {
+            alert('Incorrect input')
+        };
+    }
+    else {
+        alert('Incorrect input for account ID')
+    };
+
+    document.getElementById("accountId").value = "";
+    document.getElementById("amount").value = "";
+ }
