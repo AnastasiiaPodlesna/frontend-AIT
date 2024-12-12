@@ -5,29 +5,13 @@ let bankAccount =
     accountHolderName: "Alice",
     balance: 0,
 
-    deposit: function (sum) //  sum - число
-    {
-        if (sum > 0) // sum > 0 ? this.balance += sum : alert(" ")
-        {
-            this.balance += sum;
-            //console.log(`Deposit: ${sum}USD. Balance: ${this.balance}USD`);
-        } else {
-            alert("Input error...");
-            // alert("")- вывод на экран сообщения; 
-            //confirm ("") - окно с взаимодействием с пользователем, возвращает значение false/true; 
-            // prompt("") - получение данных от пользователя в формате строки;
-        }
+    deposit: function (sum) {
+        sum > 0 ? this.balance += sum : alert("Input error...");
     },
 
     withdraw: function (sum) {
-        if (sum > 0 && sum <= this.balance) {
-            this.balance -= sum;
-            //console.log(`Withdrawn: ${sum}USD. Balance: ${this.balance}USD`);
-        } else {
-            alert("Input error or insufficient funds on account...");
-        }
+        sum > 0 && sum <= this.balance ? this.balance -= sum : alert("Input error or insufficient funds on account...");
     },
-
 };
 
 //------------------------------------------ создание аккаунтов ---------------------------------------------
@@ -54,37 +38,11 @@ function createAccount() {
 
 // --------------------------------- 2 section - отображение аккаунтов -------------------------------------------
 
-// function showAccounts()
-// {
-//     const accountList = document.getElementById("accountList");
-//     accountList.innerHTML = "";
-
-//     accounts.forEach(account => 
-//     {
-//         const listItem = document.createElement("li");
-//         listItem.textContent = `Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}`;
-//         accountList.appendChild(listItem);
-//     });
-
-// };
-
 function showAccounts() {
     const accountList = document.getElementById('accountList');
     accountList.innerHTML = ''; // очищаем список;
 
-    // for (const account of accounts) 
-    // {
-    //     const li = document.createElement('li');
-    //     li.textContent = 'Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}';
-    //     accountList.appendChild(li);
-
-    //     // accountList.innerHTML += '<li>Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}</li>';
-    // }
-
-
     accounts.forEach((account, index) => {
-        // let i = "del" + (index).toString();
-
         accountList.innerHTML += `<li> ${index + 1}. Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} <button class = deleteButton onclick="deleteAccount(${index})" >DELETE</button> </li>`;
     });
 }
@@ -105,12 +63,8 @@ const withdraw = document.getElementById('withdraw');
 deposit.onclick = function () {
 
     const id = document.getElementById("accountId").value.trim();
-    const amount = parseFloat(document.getElementById("amount").value.trim()); // или поставить знак +, чо бы получить число или еще вариант eval('10+10+5'), кот.строку из мат выражения считает и переводит в число
-
-    // есть метод поиска элемента const findAccount = accounts.find(account => account.accountNumber === accountId);
-    // возвращает сам элемент, кот. ищет или undefined и есть метод findIndex возвращает индекс или -1
-
-
+    const amount = parseFloat(document.getElementById("amount").value.trim()); 
+    
     const account = (accounts.find(e => e.accountNumber === +id))
 
     if (account) {
