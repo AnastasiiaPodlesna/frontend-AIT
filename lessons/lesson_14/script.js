@@ -83,9 +83,20 @@ function showAccounts() {
 
 
     accounts.forEach((account, index) => {
-        // let i = "del" + (index).toString();
+        
+        const li = document.createElement('li');
+        li.textContent = `Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance}`;
+     
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
 
-        accountList.innerHTML += `<li> ${index + 1}. Account ID: ${account.accountNumber}, Name: ${account.accountHolderName}, Balance: ${account.balance} <button class = deleteButton onclick="deleteAccount(${index})" >DELETE</button> </li>`;
+        li.append(deleteBtn);
+        accountList.append(li);
+
+        deleteBtn.onclick = function() {
+        accounts.splice(index, 1);
+        li.remove();
+        }
     });
 }
 
