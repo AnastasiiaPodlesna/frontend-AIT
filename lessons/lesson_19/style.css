@@ -1,0 +1,55 @@
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;  /* Расстояние между карточками */
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;    /* Располагаем элементы в колонку */
+  /*  justify-content: space-between;  Это гарантирует, что элементы будут распределены по вертикали */
+    height: 400px;  /* Фиксированная высота карточки */
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.img-wrapper  {
+    height: 200px;  /* Фиксированная высота изображения */
+    width: 100%;
+    overflow: hidden; /* Обрезаем картинку, если она выходит за пределы */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex; /* Для центрирования изображения */
+    justify-content: center; /* Центрируем картинку по горизонтали */
+    align-items: center; /* Центрируем картинку по вертикали */
+}
+
+.img-wrapper > img {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden   -  прячет лишнюю часть изображения*/
+    object-fit: cover; /* задаем contain, что бы вместить картинку в контейнере или cover что бы обрезать лишнее*/
+    display: block; /* Убирает возможные отступы снизу */
+}
+
+.product-card h4, .product-card p {
+    margin: 5px 0;  /* Убираем отступы, чтобы текст не "разъезжался" */
+    text-align: center; /* Центрируем текст по горизонтали */
+   
+}
+
+/* Описание товара */
+.product-card p {
+    flex-grow: 1;  /* Оставляем достаточно места для текста */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center; /* Центрируем описание */
+}
+
+.product-price {
+   display: flex;
+   justify-items:left ;
+}

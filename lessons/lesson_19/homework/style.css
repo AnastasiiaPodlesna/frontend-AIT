@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: rgb(230, 156, 46);   
+    margin: 10;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* высота видимой области, относительно страницы браузера, 100%*/
+}
+
+h1 {
+    color: rgb(90, 56, 15);
+    text-decoration: double;
+    display: flex;
+    justify-content: center;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;  
+}
+
+.product-card {
+    background-color: rgb(236, 214, 142);
+    display: flex;
+    flex-direction: column;   
+    height: 420px;  /*  высота карточки */
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h3 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.img-wrapper  {
+    height: 200px;  /* высота изображения */
+    width: 100%;
+    overflow: hidden; /* обрезка картинки, если она выходит за пределы */
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+
+.img-wrapper > img {
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden   -  прячет лишнюю часть изображения*/
+    object-fit: cover; /* задаем contain, что бы вместить картинку в контейнере или cover что бы обрезать лишнее*/
+    display: block; /* убирает возможные отступы снизу */
+}
+
+.product-card h4, .product-card p {
+    margin: 5px 0; 
+    text-align: center; 
+}
+
+.product-card p {
+    text-align: center;
+    margin-top: auto 
+}
