@@ -1,6 +1,10 @@
 const gridWhether = document.querySelector('#grid-whether')
+const loadingContainer = document.querySelector('#loading-container');
 
 async function fetchWhether() {
+
+    loadingContainer.style.display = 'flex'; // запускаем лоадер
+
     const res = await fetch("https://get.geojs.io/v1/ip/geo.json")
     const data = await res.json()
 
@@ -37,6 +41,10 @@ async function fetchWhether() {
 
     const { temperature, windspeed, weathercode } = weatherData.current_weather
 
+    setTimeout(() => {
+        loadingContainer.style.display = 'none'; // Скрываем лоадер после задержки
+    }, 2000); // скрываем лоадер через 2 секунды
+
     // температура
     const temp = document.createElement("p");
     temp.textContent = `Temperature:  ${temperature}°C`;
@@ -59,13 +67,13 @@ async function fetchWhether() {
     function getWeather(weatherCode) {
         switch (weatherCode) {
             case 0:
-                return 'Clear sky ☀️' ;
+                return 'Clear sky ☀️';
             case 1:
                 return 'Mainly clear 🌤️';
             case 2:
                 return 'Partly cloudy 🌤️';
             case 3:
-                return 'Overcast 🌥️' ;
+                return 'Overcast 🌥️';
             case 45:
                 return 'Fog 🌁';
             case 48:

@@ -4,10 +4,33 @@
     box-sizing: border-box;
 }
 
+#loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 200px;
+}
+
+#loading-icon {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 body {
     background-image: url("https://avatars.mds.yandex.net/i?id=c60d5366e89d2d77a6748069ef308366dba81a622dd491c8-11911774-images-thumbs&n=13");
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -26,12 +49,14 @@ h1 {
 
 /* стили для карточки погоды */
 .whether-card {
-    background-color: rgba(255, 255, 255, 0.8); /* прозрачный белый фон */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* прозрачный белый фон */
     padding: 20px;
-    border-radius: 10px; 
+    border-radius: 10px;
     width: 350px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* тень для карточки */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* тень для карточки */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,18 +66,17 @@ h1 {
 .whether-card p {
     font-size: 18px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgba(20, 20, 20, 0.8); 
+    color: rgba(20, 20, 20, 0.8);
     margin: 5px 0;
     text-align: center;
 }
 
 .whether-card p:first-child {
-    font-weight: bold; /* делаем 1 элемент жирным */
-} 
-
-.whether-card p:last-child {
-    font-weight: bold; /* и последний элемент жирным */
+    font-weight: bold;
+    /* делаем 1 элемент жирным */
 }
 
-
-
+.whether-card p:last-child {
+    font-weight: bold;
+    /* и последний элемент жирным */
+}
