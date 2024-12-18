@@ -49,7 +49,3 @@
     text-align: center; /* Центрируем описание */
 }
 
-.product-price {
-   display: flex;
-   justify-items:left ;
-}

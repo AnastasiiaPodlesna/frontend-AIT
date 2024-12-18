@@ -18,7 +18,7 @@ async function fetchProducts() {
 
     // создаем картинку
     const img = document.createElement('img')
-    img.src = prod.images
+    img.src = prod.images[0]
     img.alt = prod.title
 
     // создаем обертку для картинки
