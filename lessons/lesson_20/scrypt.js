@@ -47,7 +47,7 @@ async function fetchWhether() {
 
     // код погоды (дождь, ясно....)
     const weather = document.createElement("p");
-    weather.textContent = `Weather Code:  ${getWeather(weathercode)}`;
+    weather.textContent = `Weather:  ${getWeather(weathercode)}`;
 
     // добавляем в карточку
     card.append(heading, city, latitude, longitude, temp, wind, weather);
