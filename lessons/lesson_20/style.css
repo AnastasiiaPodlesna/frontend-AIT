@@ -3,7 +3,9 @@
 }
 
 body {
-    background-color: rgb(177, 209, 229);   
+    background-image: url("https://avatars.mds.yandex.net/i?id=c60d5366e89d2d77a6748069ef308366dba81a622dd491c8-11911774-images-thumbs&n=13");
+    background-repeat: no-repeat;
+    background-size: cover; 
     margin: 10;
     display: flex;
     flex-direction: column;
@@ -14,4 +16,15 @@ h1 {
     display: flex;
     justify-content: center;
     font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.whether-card {
+    gap: 10px;
+}
+
+p {
+
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(20, 20, 20, 0.952); 
 }
