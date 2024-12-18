@@ -59,48 +59,63 @@ async function fetchWhether() {
     function getWeather(weatherCode) {
         switch (weatherCode) {
             case 0:
-                return 'Clear sky';
+                return 'Clear sky ☀️' ;
             case 1:
+                return 'Mainly clear 🌤️';
             case 2:
+                return 'Partly cloudy 🌤️';
             case 3:
-                return 'Mainly clear, partly cloudy, and overcast';
+                return 'Overcast 🌥️' ;
             case 45:
+                return 'Fog 🌁';
             case 48:
-                return 'Fog and depositing rime fog';
+                return 'Depositing rime fog 🌁';
             case 51:
+                return 'Drizzle: light 🌦️';
             case 53:
+                return 'Drizzle: moderate 🌧️';
             case 55:
-                return 'Drizzle: Light, moderate, and dense intensity';
+                return 'Drizzle: dense intensity 🌧️🌧️';
             case 56:
+                return 'Freezing Drizzle: light 🌦️';
             case 57:
-                return 'Freezing Drizzle: Light and dense intensity';
+                return 'Freezing Drizzle: dense intensity 🌧️🌧️';
             case 61:
+                return 'Rain: slight 🌧️';
             case 63:
+                return 'Rain: moderate 🌧️🌧️';
             case 65:
-                return 'Rain: Slight, moderate, and heavy intensity';
+                return 'Rain: heavy intensity 🌧️🌧️☂️';
             case 66:
+                return 'Freezing Rain: light 🌨️';
             case 67:
-                return 'Freezing Rain: Light and heavy intensity';
+                return 'Freezing Rain: heavy intensity 🌨️🌨️';
             case 71:
+                return 'Snow fall: slight ❄️';
             case 73:
+                return 'Snow fall: moderate ❄️❄️';
             case 75:
-                return 'Snow fall: Slight, moderate, and heavy intensity';
+                return 'Snow fall: heavy intensity ❄️❄️❄️';
             case 77:
-                return 'Snow grains';
+                return 'Snow grains ❄️';
             case 80:
+                return 'Rain showers: slight 🌧️❄️';
             case 81:
+                return 'Rain showers: moderate 🌧️❄️❄️';
             case 82:
-                return 'Rain showers: Slight, moderate, and violent';
+                return 'Rain showers: violent 🌧️❄️❄️❄️';
             case 85:
+                return 'Snow showers: slight 🌧️❄️❄️';
             case 86:
-                return 'Snow showers slight and heavy';
+                return 'Snow showers: heavy 🌧️❄️❄️❄️';
             case 95:
-                return 'Thunderstorm: Slight or moderate';
+                return 'Thunderstorm: Slight or moderate ⛈️';
             case 96:
+                return 'Thunderstorm with slight ⛈️⛈️';
             case 99:
-                return 'Thunderstorm with slight and heavy hail';
+                return 'Thunderstorm with heavy hail ⛈️⛈️⛈️';
             default:
-                return 'Unknown weather condition';
+                return 'Unknown weather condition 🌁';
         }
     }
 }
